@@ -108,6 +108,7 @@ navbar:
         Home: /
         Archives: /archives
         Tags: /tags
+        Categores: /categories
     # Links to be shown on the right of the navigation bar
     links:
         Download on GitHub:

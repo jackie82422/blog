@@ -1,6 +1,7 @@
 ---
 title: 試試在Net core上用AWS TimeStream?
 date: 2021-06-03 23:02:38
+categories: AWS
 tags: [AWS,C#]
 ---
 
