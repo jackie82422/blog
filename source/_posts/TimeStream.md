@@ -1,12 +1,13 @@
 ---
 title: 試試在Net core上用AWS TimeStream?
+toc: true
 date: 2021-06-03 23:02:38
 categories: AWS
 tags: [AWS,C#]
 ---
 
 
-# Introduction
+## Introduction
 
 AWS TimeStream 是一個時序型資料庫，跟其他的時序型資料庫（influxdb, Prometheus）用途差不多，主要是用來處理帶時間標籤，具有依照時間順序變化的資料，例如machine log.
 <!-- more -->
@@ -26,7 +27,7 @@ AWS TimeStream 是一個時序型資料庫，跟其他的時序型資料庫（in
 
 兩者的差異在是否可以對TimeStream的資料做加密。
 
-# Sample Code
+## Sample Code
 
 要使用Aws TimeStream，需要添加幾個package
 
@@ -141,7 +142,7 @@ Record的內容固定要有Dimensions, MeasureName, MeasureValue, MeasureValueTy
 
 因為這類db處理的問題主要是log，機器log, Sensor Log..etc，Measure（度量）特定的指標隨時間的變化是這類db被設計來使用的主要因素，除此之外才去記錄這個指標的其他維度（dimesion）。
 
-# Performance
+## Performance
 
-以Insert為例，資料大小小於1kb的情況下利用docker在EC2(Tokyo Region)連接愛爾蘭的Timestream Db，透過bechmark蒐集到的速度如下:
+以Insert為例，資料大小小於1kb的情況下利用docker在EC2(Tokyo Region)連接愛爾蘭的Timestream Db，透過bechmark蒐集到的數據如下:
 ![](performance.png)

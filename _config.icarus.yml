@@ -109,11 +109,12 @@ navbar:
         Archives: /archives
         Tags: /tags
         Categores: /categories
-    # Links to be shown on the right of the navigation bar
-    links:
-        Download on GitHub:
-            icon: fab fa-github
-            url: 'https://github.com/ppoffice/hexo-theme-icarus'
+        # About: /2021/06/07/implicit/
+    # # Links to be shown on the right of the navigation bar
+    # links:
+    #     Download on GitHub:
+    #         icon: fab fa-github
+    #         url: 'https://github.com/ppoffice/hexo-theme-icarus'
 # Page footer configurations
 footer:
     # Links to be shown on the right of the footer section
@@ -243,9 +244,9 @@ widgets:
             Instagram:
                 icon: fab fa-instagram
                 url: 'https://www.instagram.com/cha_lin422/'
-            RSS:
-                icon: fas fa-rss
-                url: /
+            Email:
+                icon: fas fa-envelope-square
+                url: 'mailto:jackie82422@gmail.com'
     # Table of contents widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
@@ -286,6 +287,12 @@ widgets:
         # Where should the widget be placed, left sidebar or right sidebar
         position: left
         type: tags
+    
+    #文章目錄
+    -
+        type: toc
+        position: right
+        index: true
     # Google FeedBurner email subscription widget configurations
     # -
     #     # Where should the widget be placed, left sidebar or right sidebar
