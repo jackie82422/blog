@@ -20,7 +20,7 @@ Benchmark是一個用來評估函數執行時間的工具，如果你厭倦了St
 
 這個套件同時有 .Net Foundation的支持，廣大的社群確保了你不會有出了問題找不到人求助的窘境。
 
-<a href="https://github.com/dotnet/BenchmarkDotNet">BenchmarkDotNet</a>
+<a href="https://github.com/dotnet/BenchmarkDotNet">BenchmarkDotNet Github</a>
 
 
 # Implement
