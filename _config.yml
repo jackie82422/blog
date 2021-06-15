@@ -103,3 +103,7 @@ theme: icarus
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+mermaid: ## mermaid url https://github.com/knsv/mermaid
+  enable: true  # default true
+  version: "7.1.2" # default v7.1.2
