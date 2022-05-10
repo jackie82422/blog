@@ -37,6 +37,7 @@ module.exports = class extends Component {
             <script src={url_for('/js/column.js')}></script>
             <Plugins site={site} config={config} page={page} helper={helper} head={false} />
             <script src={url_for('/js/main.js')} defer></script>
+	    <script src="https://unpkg.com/mermaid@8.8.4/dist/mermaid.min.js"></script>
         </Fragment>;
     }
 };
