@@ -7,7 +7,6 @@ tags: C#
 ---
 
 
-# Preface
 
 最近在做某公司的面試試題，用到了System.Threading.Channels這個物件，覺得還蠻有趣的，這次來一起玩一下這個Channel.
 
