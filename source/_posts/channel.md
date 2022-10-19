@@ -108,7 +108,7 @@ BoundedChannel的`FullMode`參數定義了當資料達到限制的上限時應�
 
 但如果你只是要Write data to channel，用上WriteAsync就足矣；不管是`UnBoundedChannel`或是`BoundedChannel`都是如此，原因我們看一下源碼馬上就有答案。
 
-不管是`UnBoundedChannel.Writer` or BoundedChannel.Writer 實際都是依賴於同一個抽象類別`ChannelWriter<T>`，細節再各自繼承去展開。在`WriteAsync`函數中是這樣寫
+不管是`UnBoundedChannel.Writer` or BoundedChannel.Writer 實際都是依賴於同一個抽象類別`ChannelWriter<T>`，細節再各自繼承去展開。在`WriteAsync`函式中是這樣寫
 
 ```C#
 public virtual ValueTask WriteAsync(T item, CancellationToken cancellationToken = default)
@@ -148,7 +148,7 @@ private async ValueTask WriteAsyncCore(T innerItem, CancellationToken ct)
 }
 ```
 
-算是相當簡單粗暴了，如果我寫不進去，我就繼續寫他直到我寫進去為止。而與Write相關的第三個函數也在這邊了`WaitToWriteAsync`。所以實際`WriteAsync`在跑的時候三個函數都是調用的，但知道了它內部是如何調用之後就可以針對自己的業務邏輯做一些before write, after write之類的操作，而在Single Producer情況下就是完全無腦用`WriteAsync`就可以了。
+算是相當簡單粗暴了，如果我寫不進去，我就繼續寫他直到我寫進去為止。而與Write相關的第三個函式也在這邊了`WaitToWriteAsync`。所以實際`WriteAsync`在跑的時候三個函式都是調用的，但知道了它內部是如何調用之後就可以針對自己的業務邏輯做一些before write, after write之類的操作，而在Single Producer情況下就是完全無腦用`WriteAsync`就可以了。
 
 ```C#
 var producer = Task.Run(async () =>
@@ -166,7 +166,7 @@ var producer = Task.Run(async () =>
 
 ## Read data from Channel
 
-在Reader中一樣提供了四種的跟讀取有關的函數：
+在Reader中一樣提供了四種的跟讀取有關的函式：
 
 1. ReadAsync
 2. ReadAllAsync
@@ -175,9 +175,9 @@ var producer = Task.Run(async () =>
 
 這邊的整個結構跟上面Write的結構很相似，一樣在做`ReadAsync`的時候會先`TryRead`，失敗後會去做`WaitToReadAsync`跑While直到取得值，或者收到Cancel Tone或者儲存體裡已經沒有值。
 
-因為很相像，這邊就不另外展開；但在這基礎上多了一個函數`WaitToReadAsync`，先留著等等再說。
+因為很相像，這邊就不另外展開；但在這基礎上多了一個函式`WaitToReadAsync`，先留著等等再說。
 
-跟Writer的概念一樣，我們再多數情境下可以直接使用`ReadAsync`，除非有甚麼特殊的處理那可以透過其他函數去實作`ReadAsync`的內容並加上自己的業務邏輯。
+跟Writer的概念一樣，我們再多數情境下可以直接使用`ReadAsync`，除非有甚麼特殊的處理那可以透過其他函式去實作`ReadAsync`的內容並加上自己的業務邏輯。
 
 所以可以這樣寫：
 

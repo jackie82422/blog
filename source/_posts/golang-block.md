@@ -1,5 +1,5 @@
 ---
-title: golang 雜記
+title: golang 雜記 - block, for, switch
 toc: true
 categories: golang
 date: 2022-10-19 13:33:59

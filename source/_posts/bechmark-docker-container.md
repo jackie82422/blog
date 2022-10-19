@@ -16,7 +16,7 @@ tags: [C#,Docker,Tools]
 
 ## BenchmarkDotNet
 
-Benchmark是一個用來評估函數執行時間的工具，如果你厭倦了StopWatch + Console.WirteLine的無限循環，可以考慮用Benchmark來解決這些麻煩事；同時它可以做到重複測試，並提供了許多統計指標讓你評估受測函數的性能，測試結果也可以用多種方式儲存，寫報告找不到靈感？Benchmark直接糊他一頁，整個專業度都變高了。
+Benchmark是一個用來評估函式執行時間的工具，如果你厭倦了StopWatch + Console.WirteLine的無限循環，可以考慮用Benchmark來解決這些麻煩事；同時它可以做到重複測試，並提供了許多統計指標讓你評估受測函式的性能，測試結果也可以用多種方式儲存，寫報告找不到靈感？Benchmark直接糊他一頁，整個專業度都變高了。
 
 這個套件同時有 .Net Foundation的支持，廣大的社群確保了你不會有出了問題找不到人求助的窘境。
 
