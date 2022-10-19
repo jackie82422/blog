@@ -342,3 +342,51 @@ fmt.println(mockSet[2])
 
 也用放空struct的方式，可以進一步降低記憶體使用量，但再取值就非得使用`ok`寫法了。差別只有給定boolean會消耗 1 byte... 
 
+
+## Struct
+
+大多數語言都有的功能，但golang會用的比較重一點，golang並沒有class。
+
+```go
+	type Student struct {
+		name  string
+		id    int
+		score float32
+	}
+
+	// 以下完全等同，Struct會自動將裡面的feild給定default value.
+	var cc Student
+	fmt.Println(cc.name)
+    // output : 
+	ccc := Student{}
+	fmt.Println(ccc.name)
+    // output :
+
+	jj := Student{
+		name: "jj",
+		id:   3,
+	}
+
+	fmt.Println(jj.name)
+    //output : jj
+```
+
+匿名struct
+
+```go
+	var student struct {
+		name  string
+		id    int
+		score float32
+	}
+
+	student.name = "cc"
+	student.id = 1
+	student.score = 59.9
+
+	fmt.Println(student.name)
+    // output cc
+```
+可以在一些序列化的情況下用，譬如轉json。有點像是c#的dynamic variable.
+
+> struct 一般不可比較，除非他有相同的feild, 相同的順序，且都是call by value.
