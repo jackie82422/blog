@@ -142,3 +142,4 @@ func Sample(input []int) {
 ```
 
 當我在做append的時候因為slice定義的時候給定長度容量為3，當我複製了複本過去之後同樣複製了這個長度跟容量。但當我append的時候長度增加了，容量不夠了，於是go runtime給了一個新的slice來承載內容，所以函式中的slice已經不是函式外的slice的複本了，而是一個新的slice。
+
