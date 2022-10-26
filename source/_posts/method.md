@@ -279,7 +279,7 @@ type Studenter interface {
 }
 ```
 
-前面提到golang interface的隱性實做(implimented implicitly)可以帶出一個神奇的狀態，空介面(empty interface)，從剛剛的例子可以知道只要實做了interface method的struct就會自動被認作該interface的實做，而空的介面正正是所有型態的實做。
+前面提到golang interface的隱性實做(implimented implicitly)可以帶出一個神奇的狀態，空介面(empty interface)，從剛剛的例子可以知道只要實做了interface method的struct就會自動被認作該interface的實做，而所有型態都滿足空interface的實作。
 
 所以空的interface可以代表任何的型態。
 
