@@ -189,7 +189,8 @@ var consumer = Task.Run(async () =>
         var result = await unBoundedChannel.Reader.ReadAsync();
         Console.WriteLine($"get value from channel, value is {result}");
     }
-```});
+});
+```
 
 其中While的Condition我這邊是直接用`WaitToReadAsync`處理，只要是true便代表儲存體裡面仍有資料。
 
