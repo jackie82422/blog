@@ -202,3 +202,12 @@ func main() {
 當然，因為這個範例的相依性只有一個，而且沒有二度三度四度的相依，所以這樣看下來wire其實沒有幫助dev省下什麼事情。但實際的專案並不是那麼單純，簡單地把情境稍微補一下再來看效果。
 
 現在除了取得config, 我會透過config的connection string去生成db instance，透過db instance去implement repository，並且在邏輯層調用cache和repository.
+
+
+
+
+## FX
+
+FX主要是透過reflect機制去完成DI，整體的用法會比較偏向JAVA/C#，明確地會有一個Container Provider，然後塞入需要的依賴關係，再由FX去做依賴注入。
+
+FX開宗明義地表示這個lib就是拿來服務長時間運行的服務的，典型就是web相關服務；但一般的console application也不是不能用，只是情境上他是設計給長時間運行的服務的。
