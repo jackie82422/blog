@@ -51,15 +51,16 @@ jobs:
       run: npm install && hexo generate
 
     - name: sync public folder to aws s3
-      uses: jakejarvis/s3-sync-action@v0.5.1
+      uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read --follow-symlinks --delete
-        AWS_REGION: "ap-northeast-1"
-        SOURCE_DIR: "public"
-        DEST_DIR: ${{ secrets.AWS_S3_BLOG }}
       env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BLOG }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: 'ap-northeast-1'
+        SOURCE_DIR: 'public'
+
 ```
 
 內容大致是在ubuntu上使用node 18.x 版本為環境，下載hexo cli然後生成static web code，最後上傳到AWS S3。
@@ -68,7 +69,12 @@ jobs:
 
 但AWS權限上還是建議控管一下，這個就專門給S3用，其他權限鎖一鎖還是比較保險一點。
 
+關於`s3-sync-action`的相關訊息可以點選這邊查看：[jakejarvis
+/
+s3-sync-action](https://github.com/jakejarvis/s3-sync-action)
+
 Secret的設定位置在
 ![](./githubAction/B.png)
 
 設定好之後就可以試著跑跑看了。
+![](./githubAction/C.png)
