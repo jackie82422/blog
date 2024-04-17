@@ -229,7 +229,7 @@ widgets:
         # Author's current location
         location: Taiwan
         # URL or path to the avatar image
-        avatar: /img/IMG_3340.jpg
+        avatar: /img/IMG_3340.JPG
         # Whether show the rounded avatar image
         avatar_rounded: false
         # Email address for the Gravatar
